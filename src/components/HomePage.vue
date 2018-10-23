@@ -1,42 +1,43 @@
 <template>
   <div class="HomePage">
-    <b-container fluid> 
+    <b-container fluid>
     </b-container>
   </div>
 </template>
 
 <script>
-  import draggable from 'vuedraggable'
-  export default {
-    name: 'HomePage',
-    components: {
-      draggable,
+import draggable from 'vuedraggable';
+
+export default {
+  name: 'HomePage',
+  components: {
+    draggable,
+  },
+  data() {
+    return {
+      editable: true,
+      isDragging: false,
+      delayedDragging: false,
+    };
+  },
+  methods: {
+    onMove({
+      relatedContext,
+      draggedContext,
+    }) {
+      const relatedElement = relatedContext.element;
+      const draggedElement = draggedContext.element;
+      return (
+        (!relatedElement || !relatedElement.fixed) && !draggedElement.fixed
+      );
     },
-    data() {
-      return {
-        editable: true,
-        isDragging: false,
-        delayedDragging: false
-      }
+  },
+  computed: {
+    dragOptions() {
+      return {};
     },
-    methods: {
-      onMove({
-        relatedContext,
-        draggedContext
-      }) {
-        const relatedElement = relatedContext.element;
-        const draggedElement = draggedContext.element;
-        return (
-          (!relatedElement || !relatedElement.fixed) && !draggedElement.fixed
-        );
-      }
-    },
-    computed: {
-      dragOptions() {
-        return {};
-      },
-    },
-  };
+  },
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
