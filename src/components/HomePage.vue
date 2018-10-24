@@ -3,7 +3,7 @@
     <b-container >
       <b-row>
        <b-col>
-         <h2> Hello World </h2>
+         <h2> Welcome to Bookmrk. <br> We think bookmarking on the web is due for a change </h2>
        </b-col>
       </b-row>
     </b-container>

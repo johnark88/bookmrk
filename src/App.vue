@@ -1,7 +1,12 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> 
+      <b-nav fill tabs>
+        <b-nav-item active> <router-link to="/">Home</router-link> </b-nav-item>
+        <b-nav-item> About </b-nav-item>
+        <b-nav-item> Work </b-nav-item>
+      </b-nav>
+      
     </div>
     <router-view/>
   </div>
@@ -13,16 +18,17 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #00171f;
 }
 #nav {
   padding: 30px;
   a {
     font-weight: bold;
-    color: #2c3e50;
+    color: #007ea7;
     &.router-link-exact-active {
-      color: #42b983;
+      color: #007ea7;
     }
   }
 }
+
 </style>
